@@ -1,0 +1,25 @@
+{
+    "gestionProjetApp": {
+        "rendezVous" : {
+            "home": {
+                "title": "RendezVous",
+                "createLabel": "Créer un nouveau Rendez Vous",
+                "createOrEditLabel": "Créer ou éditer un Rendez Vous",
+                "search": "Recherche pour Rendez Vous"
+            },
+            "created": "Un nouveau Rendez Vous a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Rendez Vous avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Rendez Vous avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Rendez Vous {{ id }} ?"
+            },
+            "detail": {
+                "title": "Rendez Vous"
+            },
+            "date": "Date",
+            "description": "Description",
+            "ordreDuJour": "Ordre Du Jour",
+            "user": "User"
+        }
+    }
+}

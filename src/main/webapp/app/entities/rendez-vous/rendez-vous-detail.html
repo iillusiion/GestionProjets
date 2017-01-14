@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="gestionProjetApp.rendezVous.detail.title">Rendez Vous</span> {{vm.rendezVous.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="gestionProjetApp.rendezVous.date">Date</span></dt>
+        <dd>
+            <span>{{vm.rendezVous.date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="gestionProjetApp.rendezVous.description">Description</span></dt>
+        <dd>
+            <span>{{vm.rendezVous.description}}</span>
+        </dd>
+        <dt><span data-translate="gestionProjetApp.rendezVous.ordreDuJour">Ordre Du Jour</span></dt>
+        <dd>
+            <span>{{vm.rendezVous.ordreDuJour}}</span>
+        </dd>
+        <dt><span data-translate="gestionProjetApp.rendezVous.user">User</span></dt>
+        <dd>
+            {{vm.rendezVous.user.email}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="rendez-vous-detail.edit({id:vm.rendezVous.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

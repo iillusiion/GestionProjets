@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="gestionProjetApp.document.detail.title">Document</span> {{vm.document.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="gestionProjetApp.document.libelle">Libelle</span></dt>
+        <dd>
+            <span>{{vm.document.libelle}}</span>
+        </dd>
+        <dt><span data-translate="gestionProjetApp.document.description">Description</span></dt>
+        <dd>
+            <span>{{vm.document.description}}</span>
+        </dd>
+        <dt><span data-translate="gestionProjetApp.document.dateDeposition">Date Deposition</span></dt>
+        <dd>
+            <span>{{vm.document.dateDeposition | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="gestionProjetApp.document.typeDocument">Type Document</span></dt>
+        <dd>
+            <span>{{vm.document.typeDocument}}</span>
+        </dd>
+        <dt><span data-translate="gestionProjetApp.document.projet">Projet</span></dt>
+        <dd>
+            <a ui-sref="projet-detail({id:vm.document.projet.id})">{{vm.document.projet.libelleProjet}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="document-detail.edit({id:vm.document.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

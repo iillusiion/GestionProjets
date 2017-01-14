@@ -1,0 +1,26 @@
+{
+    "gestionProjetApp": {
+        "projet" : {
+            "home": {
+                "title": "Projets",
+                "createLabel": "Créer un nouveau Projet",
+                "createOrEditLabel": "Créer ou éditer un Projet",
+                "search": "Recherche pour Projet"
+            },
+            "created": "Un nouveau Projet a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Projet avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Projet avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Projet {{ id }} ?"
+            },
+            "detail": {
+                "title": "Projet"
+            },
+            "libelleProjet": "Libelle Projet",
+            "typeProjet": "Type Projet",
+            "dateDebut": "Date Debut",
+            "dateFin": "Date Fin",
+            "user": "User"
+        }
+    }
+}

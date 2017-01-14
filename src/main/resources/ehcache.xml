@@ -41,5 +41,21 @@
            timeToLiveSeconds="3600">
     </cache>
 
+    <cache name="com.projet.domain.Document"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.projet.domain.Projet"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.projet.domain.Projet.os"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.projet.domain.RendezVous"
+        timeToLiveSeconds="3600">
+    </cache>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </ehcache>
