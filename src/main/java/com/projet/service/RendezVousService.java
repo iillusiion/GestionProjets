@@ -2,6 +2,7 @@ package com.projet.service;
 
 import com.projet.domain.RendezVous;
 import com.projet.repository.RendezVousRepository;
+import com.projet.security.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -45,7 +46,12 @@ public class RendezVousService {
     @Transactional(readOnly = true) 
     public Page<RendezVous> findAll(Pageable pageable) {
         log.debug("Request to get all RendezVous");
-        Page<RendezVous> result = rendezVousRepository.findAll(pageable);
+         Page<RendezVous> result;
+        if(SecurityUtils.getCurrentUserLogin().equals("admin")){
+         result = rendezVousRepository.findAll(pageable);
+        }else{
+        result = rendezVousRepository.findByUserLogin(SecurityUtils.getCurrentUserLogin(),pageable);
+        }
         return result;
     }
 

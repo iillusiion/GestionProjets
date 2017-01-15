@@ -2,6 +2,7 @@ package com.projet.service;
 
 import com.projet.domain.Projet;
 import com.projet.repository.ProjetRepository;
+import com.projet.security.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -45,7 +46,12 @@ public class ProjetService {
     @Transactional(readOnly = true) 
     public Page<Projet> findAll(Pageable pageable) {
         log.debug("Request to get all Projets");
-        Page<Projet> result = projetRepository.findAll(pageable);
+        Page<Projet> result;
+        if(SecurityUtils.getCurrentUserLogin().equals("admin")){
+         result = projetRepository.findAll(pageable);
+        }else{
+        result = projetRepository.findByUserLogin(SecurityUtils.getCurrentUserLogin(),pageable);
+        }
         return result;
     }
 

@@ -65,9 +65,13 @@
                 </p>
             </div>
         </div>
-	<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+        <div class="form-group">
+            <label class="control-label">Fichier</label>
+            <input class="form-control" type="file" name="file" />
 				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
-	
+		
+	</div>
+
 	<div>
 		<ul>
 			<li th:each="file : ${files}">
