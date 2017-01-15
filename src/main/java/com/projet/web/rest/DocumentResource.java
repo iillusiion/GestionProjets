@@ -52,7 +52,6 @@ public class DocumentResource {
             .headers(HeaderUtil.createEntityCreationAlert("document", result.getId().toString()))
             .body(result);
     }
-
     /**
      * PUT  /documents : Updates an existing document.
      *

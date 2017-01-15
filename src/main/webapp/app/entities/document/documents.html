@@ -6,7 +6,7 @@
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="document.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="gestionProjetApp.document.home.createLabel">
+                    <span  data-translate="gestionProjetApp.document.home.createLabel" >
                         Create new Document
                     </span>
                 </button>
@@ -14,6 +14,15 @@
         </div>
     </div>
     <br/>
+      <form name="searchForm" class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+    </div>
+    <button class="btn btn-info" ng-click="search(searchQuery)"><span class="glyphicon glyphicon-search"></span> <span>Search an Entity</span>
+    </button>
+    <button class="btn btn-info" ng-click="clear()" ng-show="currentSearch != null"><span class="glyphicon glyphicon-trash"></span> <span>Clear search</span>
+    </button>
+</form>
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
@@ -28,6 +37,7 @@
                 </tr>
             </thead>
             <tbody>
+              
                 <tr ng-repeat="document in vm.documents track by document.id">
                     <td><a ui-sref="document-detail({id:document.id})">{{document.id}}</a></td>
                     <td>{{document.libelle}}</td>
