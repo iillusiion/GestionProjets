@@ -14,6 +14,14 @@
         </div>
     </div>
     <br/>
+        <form name="searchForm" class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" >
+    </div>
+    <button class="btn btn-info" ng-click="search(searchQuery)"><span class="glyphicon glyphicon-search"></span> <span>Recherche</span>
+    </button>
+    <button class="btn btn-info" ng-click="clear()" ng-show="currentSearch != null"><span class="glyphicon glyphicon-trash"></span> <span>Clear search</span>
+    </button>
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
@@ -23,7 +31,7 @@
                     <th jh-sort-by="typeProjet"><span data-translate="gestionProjetApp.projet.typeProjet">Type Projet</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="dateDebut"><span data-translate="gestionProjetApp.projet.dateDebut">Date Debut</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="dateFin"><span data-translate="gestionProjetApp.projet.dateFin">Date Fin</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="user.id"><span data-translate="gestionProjetApp.projet.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.id"><span data-translate="gestionProjetApp.projet.user">Etudiant</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -35,7 +43,7 @@
                         <td>{{projet.dateDebut | date:'mediumDate'}}</td>
                         <td>{{projet.dateFin | date:'mediumDate'}}</td>
                     <td>
-                        {{projet.user.id}}
+                        {{projet.user.login}}
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

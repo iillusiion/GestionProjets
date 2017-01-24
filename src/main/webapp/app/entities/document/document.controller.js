@@ -17,7 +17,7 @@
         vm.itemsPerPage = paginationConstants.itemsPerPage;
 
         loadAll();
-
+    
         function loadAll () {
             Document.query({
                 page: pagingParams.page - 1,
@@ -47,6 +47,14 @@
             vm.page = page;
             vm.transition();
         }
+         $scope.search = function (searchQuery) {
+            $scope.links = null;
+            $scope.page = 1;
+            $scope.predicate = 'id';
+            $scope.reverse = true;
+            $scope.currentSearch = searchQuery;
+            $scope.loadAll();
+        };
 
         function transition () {
             $state.transitionTo($state.$current, {

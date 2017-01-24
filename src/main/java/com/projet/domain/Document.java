@@ -41,7 +41,7 @@ public class Document implements Serializable {
 
     @ManyToOne
     private Projet projet;
-
+   
     public Long getId() {
         return id;
     }

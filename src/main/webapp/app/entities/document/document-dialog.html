@@ -68,13 +68,13 @@
         <div class="form-group">
             <label class="control-label">Fichier</label>
             <input class="form-control" type="file" name="file" />
-				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+		<td></td><td><input class="btn btn-primary" type="submit" value="Upload" /></td>
 		
 	</div>
 
-	<div>
-		<ul>
-			<li th:each="file : ${files}">
+	<div class="form-group">
+		<ul class="btn btn-primary">
+			<li   th:each="file : ${files}">
 				<a th:href="${file}" th:text="${file}" />
 			</li>
 		</ul>

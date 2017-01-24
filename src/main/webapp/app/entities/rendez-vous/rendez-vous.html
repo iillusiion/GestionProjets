@@ -14,6 +14,14 @@
         </div>
     </div>
     <br/>
+        <form name="searchForm" class="form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" >
+    </div>
+    <button class="btn btn-info" ng-click="search(searchQuery)"><span class="glyphicon glyphicon-search"></span> <span>Recherche</span>
+    </button>
+    <button class="btn btn-info" ng-click="clear()" ng-show="currentSearch != null"><span class="glyphicon glyphicon-trash"></span> <span>Clear search</span>
+    </button>
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
@@ -22,7 +30,7 @@
                     <th jh-sort-by="date"><span data-translate="gestionProjetApp.rendezVous.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="description"><span data-translate="gestionProjetApp.rendezVous.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="ordreDuJour"><span data-translate="gestionProjetApp.rendezVous.ordreDuJour">Ordre Du Jour</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="user.email"><span data-translate="gestionProjetApp.rendezVous.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.email"><span data-translate="gestionProjetApp.rendezVous.user">Etudiant</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
